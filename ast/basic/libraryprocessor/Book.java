@@ -1,4 +1,4 @@
-package library;
+package ast.basic.libraryprocessor;
 
 public class Book {
     private String title;

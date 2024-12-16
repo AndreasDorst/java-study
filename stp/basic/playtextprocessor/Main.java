@@ -3,33 +3,18 @@ package stp.basic.playtextprocessor;
 public class Main {
 
     public static String printTextPerRole(String[] roles, String[] textLines) {
-        StringBuilder[] rolelines = new StringBuilder[roles.length];
-
-        for (int i = 0; i < roles.length; i++) {
-            rolelines[i] = new StringBuilder(roles[i] + ":\n");
-        }
-
-        for (int i = 0; i < textLines.length; i++) {
-            String line = textLines[i];
-            int colonIndex = line.indexOf(":");
-
-            String role = line.substring(0, colonIndex).trim();
-            String text = line.substring(colonIndex + 1).trim();
-
-            for (int j = 0; j < roles.length; j++) {
-                if (roles[j].equals(role)) {
-                    rolelines[j].append((i + 1) + ") " + text).append("\n");
-                    break;
+        StringBuilder result = new StringBuilder();
+        for (String role : roles) {
+            result.append(role).append(":\n");
+            for (int j = 0; j < textLines.length; j++) {
+                if (textLines[j].startsWith(role + ":")) {
+                    result.append(textLines[j].replaceFirst(role + ":", (j + 1) + ")")).append("\n");
                 }
             }
+            result.append("\n");
         }
 
-        StringBuilder result = new StringBuilder();
-        for (StringBuilder roleText : rolelines) {
-            result.append(roleText).append("\n");
-        }
-
-        return result.toString().trim();
+        return result.toString();
     }
 
     public static void main(String[] args) {

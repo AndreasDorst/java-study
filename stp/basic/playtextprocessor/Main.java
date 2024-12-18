@@ -2,21 +2,6 @@ package stp.basic.playtextprocessor;
 
 public class Main {
 
-    public static String printTextPerRole(String[] roles, String[] textLines) {
-        StringBuilder result = new StringBuilder();
-        for (String role : roles) {
-            result.append(role).append(":\n");
-            for (int j = 0; j < textLines.length; j++) {
-                if (textLines[j].startsWith(role + ":")) {
-                    result.append(textLines[j].replaceFirst(role + ":", (j + 1) + ")")).append("\n");
-                }
-            }
-            result.append("\n");
-        }
-
-        return result.toString();
-    }
-
     public static void main(String[] args) {
         String[] roles = {
                 "Городничий", "Аммос Федорович",
@@ -31,7 +16,7 @@ public class Main {
                 "Артемий Филиппович: Вот не было заботы, так подай!",
                 "Лука Лукич: Господи боже! еще и с секретным предписаньем!"};
 
-        System.out.println(printTextPerRole(roles, textLines));
+        System.out.println(RoleTextFormatter.printTextPerRole(roles, textLines));
     }
 
 }

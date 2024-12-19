@@ -1,9 +1,16 @@
 package stp.basic.moverobot;
 
 public class Robot {
-    int x = 0;
-    int y = 0;
-    Direction direction = Direction.UP;
+    int x, y;
+    Direction direction;
+
+
+    // Constructor
+    public Robot(int x, int y, Direction direction) {
+        this.x = x;
+        this.y = y;
+        this.direction = direction;
+    }
 
     public Direction getDirection() {
         return direction;
@@ -18,22 +25,21 @@ public class Robot {
     }
 
     public void turnLeft() {
-        System.out.println("поворот против часовой стрелки");
+        System.out.println("turn counter clockwise");
         direction = direction.turnLeft();
     }
 
     public void turnRight() {
-        System.out.println("поворот по часовой стрелке");
+        System.out.println("turn clockwise");
         direction = direction.turnRight();
     }
 
     public void stepForward() {
-        System.out.println("движение");
         switch (direction) {
-            case UP: y++; System.out.println("вверх"); break;
-            case DOWN: y--; System.out.println("вниз"); break;
-            case LEFT: x--; System.out.println("влево"); break;
-            case RIGHT: x++; System.out.println("вправо"); break;
+            case UP: y++; System.out.println("up"); break;
+            case DOWN: y--; System.out.println("down"); break;
+            case LEFT: x--; System.out.println("left"); break;
+            case RIGHT: x++; System.out.println("right"); break;
         }
     }
 }

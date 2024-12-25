@@ -18,7 +18,7 @@ public class Main {
 
             for (int j = 0; j < roles.length; j++) {
                 if (roles[j].equals(role)) {
-                    rolelines[j].append((i + 1) + ") " + text).append("\n");
+                    rolelines[j].append(i + 1).append(") ").append(text).append("\n");
                     break;
                 }
             }

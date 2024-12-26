@@ -36,7 +36,7 @@ word2:    p   q
 merged: a p b q c   d
 
 
-### Constraints:
+## Constraints:
 
 `1 <= word1.length, word2.length <= 100`
 `word1` and `word2` consist of lowercase English letters.

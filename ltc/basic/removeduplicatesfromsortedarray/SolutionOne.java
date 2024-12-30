@@ -1,10 +1,8 @@
 package ltc.basic.removeduplicatesfromsortedarray;
 
-class Solution {
+class SolutionOne {
     public static int removeDuplicates(int[] nums) {
-        if (nums.length == 0) {
-            return 0;
-        }
+        if (nums.length == 0) { return 0; }
         int slow = 1;
         for (int fast = 1; fast < nums.length; fast++) {
             if (nums[fast] != nums[fast - 1]) {
